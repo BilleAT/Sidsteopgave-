@@ -35,3 +35,16 @@ function sendMailAPI() {
     })
     .catch(err => console.error("Fejl:", err));
 }
+
+//Drop down med menu der kan linke til leaderboard
+function toggleDropdown() {
+  const dropdown = document.getElementById("dropdown");
+  dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+}
+
+/* Luk dropdown hvis der klikkes udenfor */
+window.onclick = function(event) {
+  if (!event.target.matches('.dropdown-btn')) {
+    document.getElementById("dropdown").style.display = "none";
+  }
+}
