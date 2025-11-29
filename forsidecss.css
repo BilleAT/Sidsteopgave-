@@ -16,12 +16,11 @@ text-align: center;
 
 /* Container */
 .dropdown {
-  position: relative;
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+        position: absolute;
+        top: 125px;   /* flyt ned */
+        left: 625px;  /* flyt til højre */
+      
+  }
 
 /* Knappen */
 .dropdown-btn {
