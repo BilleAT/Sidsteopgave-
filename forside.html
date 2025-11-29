@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +11,23 @@
 <p><h1>GreenMind Signup</h1></p>
 
 <p><h2>Skriv dine venner op til gode formål!</h2></p>
-    
+<div class="dropdown">
+    <button class="dropdown-btn" onclick="toggleDropdown()">Menu</button>
+  
+    <div class="dropdown-content" id="dropdown">
+      <a href="Leaderboard.html">Leaderboard</a>
+    </div>
+  </div>
+
+
+  <input id="username" type="text" placeholder="Dit navn" required>
     <input type="email" id="email" placeholder="Email">
     <button onclick="sendMailAPI()">Send via API</button>
-    <div class="dropdown-content" id="dropdown">
-    <a href="#">Leaderboard</a>
+
+
+
+    
+
   </div>
 </div>
 <script src="forsidescript.js"></script>    
