@@ -1,21 +1,24 @@
-let GOOGLE_API_URL = "https://script.google.com/macros/s/AKfycbx5LKoh7fgON1J7IH8su8eouVjJz-ETk__J17M_nWjSwYOVZPjl02SAdKZsjqTT_AJtnQ/exec";  // indsæt din URL her
+let GOOGLE_API_URL = "https://script.google.com/macros/s/AKfycbwKWrThL2tX7VcGGK6ofvu0xOTZG7GRb6G5IP8_znvZEVQWBNcAdgRFTGH8V35cqOdp/exec";  // indsæt din URL her
 
 function sendMailAPI() {
     let recipient = document.getElementById("email").value.trim().toLowerCase();
+    let username = document.getElementById("username").value.trim();
 
-    // Først: Tjek email i Google Sheets
     fetch(GOOGLE_API_URL, {
         method: "POST",
-        body: JSON.stringify({ email: recipient })
+        headers: { "Content-Type": "application/json" },  // <-- MANGLEDE
+        body: JSON.stringify({
+            email: recipient,
+            username: username
+        })
     })
     .then(res => res.json())
     .then(data => {
         if (data.status === "duplicate") {
             alert("Denne email er allerede registreret.");
-            return; // Stop her!
+            return;
         }
 
-        // Email er ny → send velkomstmailen
         return fetch("https://api.emailjs.com/api/v1.0/email/send", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -35,10 +38,9 @@ function sendMailAPI() {
     })
     .catch(err => console.error("Fejl:", err));
 }
-
 //Drop down med menu der kan linke til leaderboard
 function toggleDropdown() {
-  const dropdown = document.getElementById("dropdown");
+  let dropdown = document.getElementById("dropdown");
   dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 }
 
