@@ -1,4 +1,4 @@
-let GOOGLE_API_URL = "https://script.google.com/macros/s/AKfycbydesIWy4Jo2nX88ZZPXmWxLDPl09kcZKIS6sq0nxDRLfjpPoV1PvC9RuzmwFrXYST2rg/exec";  // indsæt din URL her
+let GOOGLE_API_URL = "https://script.google.com/macros/s/AKfycbw4UqYs9_eJp4qpmn8Kq_nFnJXLbNfCerMoo9bq1qfRZR0ZZi9x8MQllqRQxIrXsCv0/exec";  // indsæt din URL her
 
 function sendMailAPI() {
     let recipient = document.getElementById("email").value.trim().toLowerCase();
