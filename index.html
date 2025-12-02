@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tilmeldingsformular</title>
-    <link rel="stylesheet" href="stil.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p><h1>GreenMind Signup</h1></p>
+    <h2>Registrer ny e-mail</h2>
+<input type="text" id="username" placeholder="Indtast dit Brugernavn">
+<input type="email" id="email" placeholder="Indtast ny E-mail">
+<button onclick="sendMailAPI()">Registrer E-mail og Tildel Point</button>
 
-<p><h2>Skriv dine venner op til gode formål!</h2></p>
-    <div class="dropdown">
-        <button class="dropdown-btn" onclick="toggleDropdown()">Menu</button>
-      
-        <div class="dropdown-content" id="dropdown">
-          <a href="Leaderboard.html">Leaderboard</a>
-        </div>
-      </div>
-    <input id="email" type="email" placeholder="Indtast email">
-    <button onclick="sendMailAPI()">Tilmeld</button>
+<hr>
 
-    <script src="Apikalder.js">
-       
-    </script>
+<h2> Leaderboard (Topscorere)</h2>
+<div id="leaderboard-container">
+    </div>
 
+<hr>
+
+<div class="dropdown">
+    <button onclick="toggleDropdown()" class="dropdown-btn">Menu</button>
+    <div id="dropdown" class="dropdown-content">
+        <a href="oversigt.html">Leaderboard</a>
+    </div>
+</div>
+
+<script src="lokalapi.js">
+
+    // Din JavaScript-kode skal være her eller linkes til
+    // ... (funktionerne getStoredEmails, saveEmailLocally, displayStoredEmails osv.)
+</script>
 </body>
 </html>
