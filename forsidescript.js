@@ -1,16 +1,12 @@
-let GOOGLE_API_URL = "https://script.google.com/macros/s/AKfycbw4UqYs9_eJp4qpmn8Kq_nFnJXLbNfCerMoo9bq1qfRZR0ZZi9x8MQllqRQxIrXsCv0/exec";  // indsæt din URL her
+let GOOGLE_API_URL = "https://script.google.com/macros/s/AKfycbxuN1Bo4VLsdWHRXNuKR18Mi17wglekdWE0mG0nB-D2FeIhLKIyvQaQR4kHIFjSBGyx2Q/exec";  // <-- indsæt URL
 
-function sendMailAPI() {
+function sendMailAPI() {  
     let recipient = document.getElementById("email").value.trim().toLowerCase();
-    let username = document.getElementById("username").value.trim();
 
+    // Første API-kald → Google Sheets (duplikat-tjek)
     fetch(GOOGLE_API_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },  // <-- MANGLEDE
-        body: JSON.stringify({
-            email: recipient,
-            username: username
-        })
+        body: JSON.stringify({ email: recipient })
     })
     .then(res => res.json())
     .then(data => {
@@ -19,6 +15,7 @@ function sendMailAPI() {
             return;
         }
 
+        // Email er ny → send EmailJS velkomstmail
         return fetch("https://api.emailjs.com/api/v1.0/email/send", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -38,15 +35,23 @@ function sendMailAPI() {
     })
     .catch(err => console.error("Fejl:", err));
 }
-//Drop down med menu der kan linke til leaderboard
-function toggleDropdown() {
-  let dropdown = document.getElementById("dropdown");
-  dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-}
 
-/* Luk dropdown hvis der klikkes udenfor */
-window.onclick = function(event) {
-  if (!event.target.matches('.dropdown-btn')) {
-    document.getElementById("dropdown").style.display = "none";
+/**
+ * Dropdown-funktionalitet (Uden HTML, kun JS-logik)
+ */
+function toggleDropdown() {
+    let dropdown = document.getElementById("dropdown");
+    if (dropdown) {
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
   }
-}
+  
+  /* Luk dropdown hvis der klikkes udenfor */
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropdown-btn')) {
+      let dropdown = document.getElementById("dropdown");
+      if (dropdown) {
+          dropdown.style.display = "none";
+      }
+    }
+  }
