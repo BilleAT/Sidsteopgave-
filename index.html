@@ -1,35 +1,27 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenMind Signup</title>
-    <link rel="stylesheet" href="forsidecss.css">
+    <title>Tilmeldingsformular</title>
+    <link rel="stylesheet" href="stil.css">
 </head>
 <body>
-<p><h1>GreenMind Signup</h1></p>
+    <p><h1>GreenMind Signup</h1></p>
 
 <p><h2>Skriv dine venner op til gode formål!</h2></p>
-<div class="dropdown">
-    <button class="dropdown-btn" onclick="toggleDropdown()">Menu</button>
-  
-    <div class="dropdown-content" id="dropdown">
-      <a href="Leaderboard.html">Leaderboard</a>
-    </div>
-  </div>
+    <div class="dropdown">
+        <button class="dropdown-btn" onclick="toggleDropdown()">Menu</button>
+      
+        <div class="dropdown-content" id="dropdown">
+          <a href="Leaderboard.html">Leaderboard</a>
+        </div>
+      </div>
+    <input id="email" type="email" placeholder="Indtast email">
+    <button onclick="sendMailAPI()">Tilmeld</button>
 
+    <script src="Apikalder.js">
+       
+    </script>
 
-  <input id="username" type="text" placeholder="Dit navn" required>
-    <input type="email" id="email" placeholder="Email">
-    <button onclick="sendMailAPI()">Send via API</button>
-
-
-
-    
-
-  </div>
-</div>
-<script src="forsidescript.js"></script>    
 </body>
 </html>
