@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Mind Newsletter</title>
+    <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+    <div class="background-glow background-glow-primary"></div>
+    <div class="background-glow background-glow-secondary"></div>
+
+    <div class="cover-header">
+        <div class="cover-text">
+            <p class="brand-tag">Green Mind</p>
+            <h1 class="brand-title">Green Mind Newsletter</h1>
+            <p class="brand-subline">Prank dine venner med en bølge af grønne mails. Upsiden? De kommer fra virksomheder og organisationer, der arbejder for gode formål – en kærlig spam med et point.</p>
+        </div>
+    </div>
+
+    <header class="intro-section">
+        
+        <h2 class="intro-title">Send en grøn mailstorm</h2>
+        <p class="intro-lead">Slip en lille bølge af grøn aktivisme løs. Når du tilføjer en e-mail, modtager personen en række korte nyhedsbreve fra NGO’er og klimainitiativer – en venlig dril, der samtidig viser, hvor let automatiske mails kan misbruges.</p>
+        <div class="highlight-pills">
+            <span class="highlight-pill">Kærlig spam – med et godtgørende formål</span>
+            <span class="highlight-pill">Fremhæver NGO’er og klimakamp</span>
+            <span class="highlight-pill">Viser sårbar e-mail-infrastruktur</span>
+        </div>
+    </header>
+
+    <main class="content-grid">
+        <section class="content-card signup-card">
+            <div class="content-header">
+                <p class="section-label">Tilmelding</p>
+                <h2>Tilføj en deltager</h2>
+                <p class="helper-text">Indtast et brugernavn til oversigten og e-mailen på den person, der skal modtage vores grønne mailstorm. Det er hurtigt, enkelt og lidt for nemt – præcis som vi vil demonstrere.</p>
+            </div>
+
+            <label for="username" class="form-label">Brugernavn</label>
+            <input type="text" id="username" placeholder="Fx MailMester3000">
+
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" id="email" placeholder="ven@supergodsager.dk">
+
+            <button class="primary-btn" onclick="sendMailAPI()">Send nyhedsbrev</button>
+
+            <div class="fine-print">
+                <p>Fair play: Den samme e-mail kan kun tilmeldes én gang. Idéen er en kærlig reminder om klimahandling og digital sikkerhed – ikke reel chikane. Alle mails kommer fra legitime aktører der har det til fælles, at det er virksomheder og organisationer, der arbejder for gode formål.</p>
+                <div class="progress-dots">
+                    <span class="progress-dot filled"></span>
+                    <span class="progress-dot filled"></span>
+                    <span class="progress-dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-card signup-list-card">
+            <div class="content-header">
+                <p class="section-label">Overblik</p>
+                <h2>Scoreboard</h2>
+                <p class="helper-text">Her kan du se, hvem der allerede er tilmeldt. Alt gemmes lokalt i din browser, så du kan afprøve systemet uden risiko – og opdage hvor nemt automatiseringen fungerer.</p>
+            </div>
+            <div id="leaderboard-container" class="signup-list">
+                <p class="list-placeholder">Ingen tilmeldte endnu – start din første grønne mailstorm.</p>
+            </div>
+            <a class="inline-link" href="oversigt.html">Se hele listen over tilmeldte →</a>
+        </section>
+    </main>
+
+    <div class="menu-dropdown">
+        <button onclick="toggleDropdown()" class="menu-toggle dropdown-btn">☰ Menu</button>
+        <div id="dropdown" class="menu-panel">
+            <a href="oversigt.html">Alle tilmeldinger</a>
+        </div>
+    </div>
+
+    <footer class="page-footer">
+        <div class="footer-body">
+            <p class="footer-heading">Green Mind Newsletter</p>
+            <p>Kontakt: <a href="mailto:info@greenmind.dk">info@greenmind.dk</a></p>
+            <p> Njalsgade 1, 2300 København S</p>
+            <p>© 2025 Green Mind</p>
+        
+            <p><i>Del dine grønne idéer og oplevelser med fællesskabet!</i></p>
+        </div>
+    </footer>
+
+    <script src="Apiklader.js"></script>
+</body>
+</html>
+
