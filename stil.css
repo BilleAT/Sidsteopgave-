@@ -207,8 +207,25 @@ input{
   color:var(--muted);
 }
 
-.footerIndhold{ display:flex; flex-direction:column; gap:6px; }
-.footerOverskrift{ margin:0; color:var(--text); font-weight:800; }
-.sideFooter a{ color:var(--accent2); text-decoration:none; font-weight:700; }
-.sideFooter a:hover{ text-decoration:underline; }
+.footerIndhold{
+display:flex; 
+flex-direction:column;
+gap:6px; 
+}
+
+.footerOverskrift{ 
+margin:0; 
+color:var(--text); 
+font-weight:800; 
+}
+
+.sideFooter a{
+color:var(--accent2);
+text-decoration:none;
+font-weight:700; 
+}
+
+.sideFooter a:hover{
+text-decoration:underline;
+}
 
