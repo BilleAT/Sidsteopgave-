@@ -7,7 +7,7 @@
   --muted:#2f4b3a;
   --radius:18px;
   --radiusSm:12px;
-  --font:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --font:"Plus Jakarta Sans","Segoe UI",system-ui,sans-serif;
 }
 
 *{ box-sizing:border-box; }
